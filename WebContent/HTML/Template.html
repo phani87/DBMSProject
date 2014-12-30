@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+	<h:outputStylesheet library="css" name="menu.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../resources/css/style.css" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/jquery/jquery-1.11.1.min.js" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/bootstrap/bootstrap.min.js" />
+	<title>Customer Details Page</title>
+</h:head>
+
+<body>
+	<ui:debug hotkey="x"
+		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
+
+	<div id="header">
+		<ui:insert name="header">
+			<center>
+				<img src="../resources/image/logo.jpg" />
+			</center>
+			<h:form>
+			<ul id="menu_wrap" class="Blue">
+				<li class="button">
+				<h:commandLink
+							action="#{orderTrackingController.getEmplList}"
+							value="Employee Details"></h:commandLink></li>
+				<li class="button"><h:commandLink
+							action="#{orderTrackingController.getAllOrder}"
+							value="All Orders"></h:commandLink></li>
+				<li class="button"><h:link value="Track Order" outcome="/HTML/HomePage.xhtml"></h:link></li>
+				<li class="button"><h:link value="Place Order" outcome="/HTML/CreateOrder.xhtml"></h:link></li>
+			</ul></h:form>
+		</ui:insert>
+
+	</div>
+
+	<div id="content">
+		<ui:insert name="content">
+    	Content area.  See comments below this line in the source.
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+			<!-- <div> -->
+			<!-- <ui:include src="content.xhtml"/> -->
+			<!-- </div> -->
+		</ui:insert>
+	</div>
+
+
+	<div id="footer">
+		<ui:insert name="footer">
+    	<center>This is SPAR Corp Product</center>
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+			<!--<ui:include src="footer.xhtml"/>  -->
+		</ui:insert>
+	</div>
+
+</body>
+
+</html>

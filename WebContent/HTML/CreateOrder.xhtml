@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/HTML/Template.html">
+
+	<ui:define name="content">
+		<h:form>
+			<table>
+				<tr>
+					<td><label id="userName">Order ID</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.orderID}"
+							styleClass="form-control" id="userName" /></td>
+				</tr>
+				<tr>
+					<td><label id="password">Sender Name</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.senderName}"
+							styleClass="form-control" id="password" /></td>
+				</tr>
+				<tr>
+					<td><label id="firstName">Reciever Name</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.receiverName}"
+							styleClass="form-control" id="firstName" /></td>
+				</tr>
+				<tr>
+					<td><label id="lastName">Date of Order</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.dateOfOrder}"
+							styleClass="form-control" id="lastName" /></td>
+				</tr>
+				<tr>
+					<td><h:commandButton styleClass="btn btn-primary"
+							value="Submit" action="#{orderTrackingController.placeOrder}" /></td>
+					<td><h:button styleClass="btn btn-primary" value="RESET"/></td>
+					<td></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+
+.nav {
+	line-height: 30px;
+background-color: #E0DBDB;
+height: 300px;
+width: 200px;
+float: left;
+padding: 5px;
+}

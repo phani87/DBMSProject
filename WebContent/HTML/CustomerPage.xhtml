@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/jquery/jquery-1.11.1.min.js" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/bootstrap/bootstrap.min.js" />
+	<title>Customer Details Page</title>
+</h:head>
+<body>
+<ui:include src="/HTML/header.html"></ui:include>
+	<div class="container">
+		<h:dataTable id="datatable" styleClass="table table-hover"
+			value="#{userController.userDetails}" var="u">
+			<h:column>
+				<f:facet name="header">First Name</f:facet>
+				<h:outputText value="#{u.firstName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Last Name</f:facet>
+				<h:outputText value="#{u.lastName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">User Name</f:facet>
+				<h:outputText value="#{u.userName}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">User Role</f:facet>
+				<h:outputText value="#{u.userRole}" />
+			</h:column>
+		</h:dataTable>
+	</div>
+	<div class="container">
+		<h:dataTable id="datatable1" styleClass="table table-hover"
+			value="#{userController.orderDetails}" var="o">
+			<h:column>
+				<f:facet name="header">Order ID</f:facet>
+				<h:outputText value="#{o.orderID}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Customer Name</f:facet>
+				<h:outputText value="#{o.customerName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">From Address</f:facet>
+				<h:outputText value="#{o.fromAddress}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">To Address</f:facet>
+				<h:outputText value="#{o.toAddress}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Weight</f:facet>
+				<h:outputText value="#{o.weight}" />
+			</h:column>
+		</h:dataTable>
+		<h:form>
+		<h:commandLink action="" image="/resources/image/add.png" />
+		</h:form>
+	</div>
+</body>
+</html>

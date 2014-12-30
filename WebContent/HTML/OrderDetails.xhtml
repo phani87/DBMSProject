@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/jquery/jquery-1.11.1.min.js" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/bootstrap/bootstrap.min.js" />
+	<title>Customer Details Page</title>
+</h:head>
+<ui:composition template="/HTML/Template.html">
+	<ui:define name="content">
+		<h:form>
+			<h:dataTable id="datatable" styleClass="table table-hover"
+				value="#{orderTrackingController.orderDetails}" var="o"
+				style="float: right;">
+				<h:column>
+					<f:facet name="header">Order ID</f:facet>
+					<h:commandLink action="#{orderTrackingController.onClickGetOrderDetails(o)}">
+						<h:outputText value="#{o.orderID}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Sender Name</f:facet>
+					<h:outputText value="#{o.senderName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Receiver Name</f:facet>
+					<h:outputText value="#{o.receiverName}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Date Of Order</f:facet>
+					<h:outputText value="#{o.dateOfOrder}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

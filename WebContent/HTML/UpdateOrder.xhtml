@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/HTML/Template.html">
+	
+	<ui:define name="content">
+	    <h:form>
+			<table>
+				<tr>
+					<td><label id="orderID">Order ID</label></td>
+					<td><h:outputText value="#{orderTrackingController.ordersVO.orderID}"/> </td>
+				</tr>
+				<tr>
+					<td><label id="senderName">Sender Name</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.senderName}" styleClass="form-control" id="senderName" /></td>
+				</tr>
+				<tr>
+					<td><label id="receiverName">Receiver Name</label></td>
+					<td><h:inputText
+							value="#{orderTrackingController.ordersVO.receiverName}"
+							styleClass="form-control" id="receiverName" /></td>
+				</tr>
+				<tr>
+					<td><label id="dateOfOrder">Date of Order</label></td>
+					<td><h:outputText
+							value="#{orderTrackingController.ordersVO.dateOfOrder}"/></td>
+				</tr>
+				<tr>
+					<td><label id="dateofArrival">Date of Arrival</label></td>
+					<td><h:outputText
+							value="#{orderTrackingController.ordersVO.dateOfArrival}"
+							styleClass="form-control" id="dateofArrival" /></td>
+				</tr>
+				<tr>
+					<td><h:commandButton value="Update Order" action="#{orderTrackingController.updateOrder}" styleClass="btn btn-primary" /></td>
+				</tr>
+				</table>
+		</h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

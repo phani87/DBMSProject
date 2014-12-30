@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/jquery/jquery-1.11.1.min.js" />
+	<script type="text/javascript"
+		src="/DBMSProject/resources/js/bootstrap/bootstrap.min.js" />
+	<title>Customer Details Page</title>
+</h:head>
+<ui:composition template="/HTML/Template.html">
+	<ui:define name="content">
+	 	<h:dataTable id="datatable" styleClass="table table-hover"
+			value="#{orderTrackingController.emplDetailsList}" var="e" style="float: right;">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{e.empID}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{e.empName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Address</f:facet>
+				<h:outputText value="#{e.empAddress}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Designation</f:facet>
+				<h:outputText value="#{e.designation}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Department Name</f:facet>
+				<h:outputText value="#{e.deptName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Date of Birth</f:facet>
+				<h:outputText value="#{e.empDOB}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Phone No</f:facet>
+				<h:outputText value="#{e.empPhone}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Salary</f:facet>
+				<h:outputText value="#{e.empSalary}" />
+			</h:column>
+		</h:dataTable>
+	</ui:define>
+</ui:composition>
+</html>

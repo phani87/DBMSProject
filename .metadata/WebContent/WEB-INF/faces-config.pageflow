@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14147289830550" configfile="/DBMSProject/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="HTML/HomePage.xhtml" x="24" y="84" id="pf14179165387152" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf14179762290990 pf14179762290991 pf14179762290992 pf141799955448214" inlinks="pf14184047167060" path="/HTML/HomePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="HTML/EmployeeHomePage.xhtml" x="480" y="204" id="pf14179762290993" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf14179774207028" inlinks="pf14179762290990 pf14179774207029" path="/HTML/EmployeeHomePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="HTML/OrderTracking.xhtml" x="636" y="36" id="pf14179762290994" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14179762290991" path="/HTML/OrderTracking.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="HTML/OrderDetails.xhtml" x="348" y="456" id="pf14179762290995" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf14179774207029 pf14183550120352" inlinks="pf14179762290992 pf14179774207028" path="/HTML/OrderDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="HTML/OrderTrackingByCustomer.xhtml" x="72" y="456" id="pf141799955448215" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf141799955448214" path="/HTML/OrderTrackingByCustomer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="HTML/UpdateOrder.xhtml" x="782" y="156" id="pf14183550120353" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14184047167060" inlinks="pf14183550120352" path="/HTML/UpdateOrder.xhtml"/>
+  <links id="pf14179762290990" target="pf14179762290993" source="pf14179165387152" outcome="emplDetailsList"/>
+  <links id="pf14179762290991" target="pf14179762290994" source="pf14179165387152" outcome="orderTrackingPage"/>
+  <links id="pf14179762290992" target="pf14179762290995" source="pf14179165387152" outcome="getAllOrders"/>
+  <links id="pf14179774207028" target="pf14179762290995" source="pf14179762290993" outcome="emplDetailsList"/>
+  <links id="pf14179774207029" target="pf14179762290993" source="pf14179762290995" outcome="getAllOrders"/>
+  <links id="pf141799955448214" target="pf141799955448215" source="pf14179165387152" outcome="orderTrackingPageCustomer"/>
+  <links id="pf14183550120352" target="pf14183550120353" source="pf14179762290995" outcome="editOrder"/>
+  <links id="pf14184047167060" target="pf14179165387152" source="pf14183550120353" outcome="homepage"/>
+</pageflow:Pageflow>

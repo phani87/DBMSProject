@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/HTML/Template.html">
+
+	<ui:define name="content">
+		<h:dataTable id="datatable1" styleClass="table table-hover"
+			value="#{orderTrackingController.orderDetails}" var="o">
+			<h:column>
+				<f:facet name="header">Order ID</f:facet>
+				<h:outputText value="#{o.orderID}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Sender Name</f:facet>
+				<h:outputText value="#{o.senderName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Reciever Name</f:facet>
+				<h:outputText value="#{o.receiverName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Reciever Address</f:facet>
+				<h:outputText value="#{o.recieverAddress}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Location ID</f:facet>
+				<h:outputText value="#{o.locationID}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Location Name</f:facet>
+				<h:outputText value="#{o.locationName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Date of Arrival</f:facet>
+				<h:outputText value="#{o.dateOfArrival}" />
+			</h:column>
+			
+		</h:dataTable>
+	</ui:define>
+
+</ui:composition>
+</html>
